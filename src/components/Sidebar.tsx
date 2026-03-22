@@ -9,6 +9,7 @@ const files = [
   { href: "/projects", name: "projects.js" },
   { href: "/certificates", name: "certificates.tsx" },
   { href: "/contact", name: "contact.tsx" },
+  { href: "/resume", name: "resume.pdf" },
 ] as const;
 
 function FileIcon({ name }: { name: string }) {
@@ -29,9 +30,10 @@ function FileIcon({ name }: { name: string }) {
 type SidebarProps = {
   currentPath: string;
   onOpenFile: (href: string) => void;
+  onDownloadResume: () => void;
 };
 
-export default function Sidebar({ currentPath, onOpenFile }: SidebarProps) {
+export default function Sidebar({ currentPath, onOpenFile, onDownloadResume }: SidebarProps) {
   return (
     <div className="w-full min-h-0 flex flex-col">
       <div className="px-4 py-3 border-b border-white/10">
@@ -48,7 +50,13 @@ export default function Sidebar({ currentPath, onOpenFile }: SidebarProps) {
               <button
                 key={f.href}
                 type="button"
-                onClick={() => onOpenFile(f.href)}
+                onClick={() => {
+                  if (f.href === "/resume") {
+                    onDownloadResume();
+                    return;
+                  }
+                  onOpenFile(f.href);
+                }}
                 className={[
                   "flex items-center gap-2 rounded-md px-3 py-2 text-sm code-mono transition",
                   active

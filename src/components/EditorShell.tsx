@@ -155,11 +155,19 @@ export default function EditorShell({ children }: { children: React.ReactNode })
               {activity === "search" ? (
                 <SearchPanel onNavigate={openFile} />
               ) : activity === "readme" ? (
-                <Sidebar currentPath={pathname} onOpenFile={openFile} />
+                <Sidebar
+                  currentPath={pathname}
+                  onOpenFile={openFile}
+                  onDownloadResume={downloadResume}
+                />
               ) : activity === "extensions" ? (
                 <ChatPanel />
               ) : (
-                <Sidebar currentPath={pathname} onOpenFile={openFile} />
+                <Sidebar
+                  currentPath={pathname}
+                  onOpenFile={openFile}
+                  onDownloadResume={downloadResume}
+                />
               )}
             </div>
           </aside>
@@ -210,11 +218,19 @@ export default function EditorShell({ children }: { children: React.ReactNode })
                 {activity === "search" ? (
                   <SearchPanel onNavigate={openFile} />
                 ) : activity === "readme" ? (
-                  <Sidebar currentPath={pathname} onOpenFile={openFile} />
+                  <Sidebar
+                    currentPath={pathname}
+                    onOpenFile={openFile}
+                    onDownloadResume={downloadResume}
+                  />
                 ) : activity === "extensions" ? (
                   <ChatPanel />
                 ) : (
-                  <Sidebar currentPath={pathname} onOpenFile={openFile} />
+                  <Sidebar
+                    currentPath={pathname}
+                    onOpenFile={openFile}
+                    onDownloadResume={downloadResume}
+                  />
                 )}
               </div>
             </aside>
