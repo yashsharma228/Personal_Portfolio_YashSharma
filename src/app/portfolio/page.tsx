@@ -123,6 +123,12 @@ export default function PortfolioHomePage() {
                 View My Work
               </Link>
               <Link
+                href="/resume"
+                className="rounded-md bg-white/10 border border-white/12 px-4 py-2 text-sm text-white/85 hover:bg-white/14 transition code-mono"
+              >
+                Resume
+              </Link>
+              <Link
                 href="/contact"
                 className="rounded-md bg-black/20 border border-white/12 px-4 py-2 text-sm text-white/75 hover:bg-white/10 hover:text-white/90 transition code-mono"
               >

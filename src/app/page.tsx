@@ -20,6 +20,12 @@ export default function LandingPage() {
             Open Portfolio
           </Link>
           <Link
+            href="/resume"
+            className="rounded-md bg-white/12 border border-white/20 px-4 py-2 text-sm text-white hover:bg-white/18 transition code-mono"
+          >
+            Resume
+          </Link>
+          <Link
             href="/contact"
             className="rounded-md bg-black/20 border border-white/12 px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition code-mono"
           >

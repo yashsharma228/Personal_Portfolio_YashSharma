@@ -30,6 +30,7 @@ const fileMap = [
   { href: "/certificates", label: "certificates.tsx" },
   { href: "/achievements", label: "achievements.tsx" },
   { href: "/contact", label: "contact.tsx" },
+  { href: "/resume", label: "resume.pdf" },
 ] as const;
 
 export type EditorFile = (typeof fileMap)[number];
@@ -124,7 +125,6 @@ export default function EditorShell({ children }: { children: React.ReactNode })
           <ActivityBar
             active={activity}
             onChange={openPanel}
-            onDownloadResume={downloadResume}
           />
         ) : null}
 
@@ -158,7 +158,6 @@ export default function EditorShell({ children }: { children: React.ReactNode })
                 <Sidebar
                   currentPath={pathname}
                   onOpenFile={openFile}
-                  onDownloadResume={downloadResume}
                 />
               ) : activity === "extensions" ? (
                 <ChatPanel />
@@ -166,7 +165,6 @@ export default function EditorShell({ children }: { children: React.ReactNode })
                 <Sidebar
                   currentPath={pathname}
                   onOpenFile={openFile}
-                  onDownloadResume={downloadResume}
                 />
               )}
             </div>
@@ -221,7 +219,6 @@ export default function EditorShell({ children }: { children: React.ReactNode })
                   <Sidebar
                     currentPath={pathname}
                     onOpenFile={openFile}
-                    onDownloadResume={downloadResume}
                   />
                 ) : activity === "extensions" ? (
                   <ChatPanel />
@@ -229,7 +226,6 @@ export default function EditorShell({ children }: { children: React.ReactNode })
                   <Sidebar
                     currentPath={pathname}
                     onOpenFile={openFile}
-                    onDownloadResume={downloadResume}
                   />
                 )}
               </div>

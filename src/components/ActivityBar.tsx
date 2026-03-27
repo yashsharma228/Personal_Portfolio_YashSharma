@@ -5,7 +5,6 @@ type ActivityId = "explorer" | "search" | "readme" | "extensions";
 type ActivityBarProps = {
   active: ActivityId;
   onChange: (id: ActivityId) => void;
-  onDownloadResume: () => void;
 };
 
 function Item({
@@ -36,7 +35,7 @@ function Item({
   );
 }
 
-export default function ActivityBar({ active, onChange, onDownloadResume }: ActivityBarProps) {
+export default function ActivityBar({ active, onChange }: ActivityBarProps) {
   return (
     <div className="hidden md:flex w-12 shrink-0 flex-col justify-between border-r border-white/10 bg-black/35 backdrop-blur">
       <div className="flex flex-col">
@@ -45,7 +44,6 @@ export default function ActivityBar({ active, onChange, onDownloadResume }: Acti
         </div>
         <Item label="⌕" title="Search" active={active === "search"} onClick={() => onChange("search")} />
         <Item label="📄" title="README" active={active === "readme"} onClick={() => onChange("readme")} />
-        <Item label="⤓" title="Download Resume" active={false} onClick={onDownloadResume} />
         <Item label="⬚" title="Copilot" active={active === "extensions"} onClick={() => onChange("extensions")} />
       </div>
 

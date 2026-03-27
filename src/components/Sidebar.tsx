@@ -30,10 +30,9 @@ function FileIcon({ name }: { name: string }) {
 type SidebarProps = {
   currentPath: string;
   onOpenFile: (href: string) => void;
-  onDownloadResume: () => void;
 };
 
-export default function Sidebar({ currentPath, onOpenFile, onDownloadResume }: SidebarProps) {
+export default function Sidebar({ currentPath, onOpenFile }: SidebarProps) {
   return (
     <div className="w-full min-h-0 flex flex-col">
       <div className="px-4 py-3 border-b border-white/10">
@@ -50,13 +49,7 @@ export default function Sidebar({ currentPath, onOpenFile, onDownloadResume }: S
               <button
                 key={f.href}
                 type="button"
-                onClick={() => {
-                  if (f.href === "/resume") {
-                    onDownloadResume();
-                    return;
-                  }
-                  onOpenFile(f.href);
-                }}
+                onClick={() => onOpenFile(f.href)}
                 className={[
                   "flex items-center gap-2 rounded-md px-3 py-2 text-sm code-mono transition",
                   active
